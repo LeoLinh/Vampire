@@ -29,11 +29,14 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnCounter = timeToSpawn;
+        //spawnCounter = timeToSpawn;
 
         target = PlayerHealthController.Instance.transform;
 
         despawnDistance = Vector3.Distance(transform.position, maxSpawn.position) + 4f;
+
+        currentWave = -1;
+        GoToNextWave();
     }
 
     // Update is called once per frame
