@@ -25,7 +25,7 @@ public class ExpPickup : MonoBehaviour
     {
         if(movingToPlayer == true)
         {
-            transform.position = Vector3.MoveTowards(transform.position, PlayerHealthController.Instance.transform.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         }
         else
         {
@@ -34,7 +34,11 @@ public class ExpPickup : MonoBehaviour
             {
                 checkCounter = timeBetweenChecks;
 
-                if(Vector3.Distance(transform.position, PlayerHealthController.Instance.transform.position) < )
+                if(Vector3.Distance(transform.position, player.transform.position) < player.pickupRange)
+                {
+                    movingToPlayer = true;
+                    moveSpeed += player.moveSpeed;
+                }
             }
         }
     }
