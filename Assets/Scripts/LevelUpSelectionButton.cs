@@ -9,6 +9,8 @@ public class LevelUpSelectionButton : MonoBehaviour
     public TMP_Text upgradeDescText, nameLevelText;
     public Image weaponIcon;
 
+    private Weapon assignedWeapon;
+
     public void UpdateButtonDisplay(Weapon theWeapon)
     {
         upgradeDescText.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText;
