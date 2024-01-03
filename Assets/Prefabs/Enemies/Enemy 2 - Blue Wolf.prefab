@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8782720414837399719}
   - component: {fileID: 8782720414837399716}
   - component: {fileID: 8782720414837399718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy 2 - Blue Wolf
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -170,12 +170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 8782720414837399722}
-  moveSpeed: 1.1
-  damage: 7.5
+  moveSpeed: 1
+  damage: 7
   hitWaitTime: 1
-  health: 10
+  health: 5
   knockBackTime: 0.5
   expToGive: 2
+  CoinValue: 5
+  coinDropRate: 0.5
 --- !u!114 &8782720414837399718
 MonoBehaviour:
   m_ObjectHideFlags: 0

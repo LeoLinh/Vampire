@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5053373863196908180}
   - component: {fileID: 5053373863196908183}
   - component: {fileID: 5053373863196908181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy 4 - Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -170,12 +170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 5053373863196908185}
-  moveSpeed: 1
-  damage: 10
-  hitWaitTime: 1
-  health: 20
+  moveSpeed: 2
+  damage: 20
+  hitWaitTime: 3
+  health: 15
   knockBackTime: 0.5
   expToGive: 4
+  CoinValue: 20
+  coinDropRate: 0.5
 --- !u!114 &5053373863196908181
 MonoBehaviour:
   m_ObjectHideFlags: 0

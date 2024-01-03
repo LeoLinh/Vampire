@@ -16,12 +16,26 @@ public class PlayerController : MonoBehaviour
 
     public float pickupRange = 1.5f;
 
-    public Weapon activeWeapon;
+    //public Weapon activeWeapon;
+
+    public List<Weapon> unassignedWeapons, assignedWeapon;
+
+    public int maxWeapon = 3;
+
+    [HideInInspector]
+    public List<Weapon> fullyLeveledWeapon = new List<Weapon>();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (assignedWeapon.Count == 0)
+        {
+            AddWeapon(Random.Range(0, unassignedWeapons.Count));
+        }
+
+        moveSpeed = PlayerStatsController.instance.moveSpeed[0].value;
+        pickupRange = PlayerStatsController.instance.pickupRange[0].value;
+        maxWeapon = Mathf.RoundToInt(PlayerStatsController.instance.maxWeapons[0].value);
     }
 
     // Update is called once per frame
@@ -42,5 +56,24 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("IsMoving", false);
         }
+    }
+
+    public void AddWeapon(int weaponNumber)
+    {
+        if(weaponNumber < unassignedWeapons.Count)
+        {
+            assignedWeapon.Add(unassignedWeapons[weaponNumber]);
+
+            unassignedWeapons[weaponNumber].gameObject.SetActive(true);
+            unassignedWeapons.RemoveAt(weaponNumber);
+        }
+    }
+
+    public void AddWeapon(Weapon weaponToAdd)
+    {
+        weaponToAdd.gameObject.SetActive(true);
+
+        assignedWeapon.Add(weaponToAdd);
+        unassignedWeapons.Remove(weaponToAdd);
     }
 }

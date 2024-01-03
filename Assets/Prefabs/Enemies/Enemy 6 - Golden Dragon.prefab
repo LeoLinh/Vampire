@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2589634703118468600}
   - component: {fileID: 2589634703118468603}
   - component: {fileID: 2589634703118468601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy 6 - Golden Dragon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -86,12 +86,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 2589634703118468597}
-  moveSpeed: 1.25
-  damage: 15
+  moveSpeed: 0.8
+  damage: 25
   hitWaitTime: 1
-  health: 25
+  health: 100
   knockBackTime: 0.5
-  expToGive: 6
+  expToGive: 15
+  CoinValue: 70
+  coinDropRate: 0.5
 --- !u!114 &2589634703118468601
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3666052311913695135}
   - component: {fileID: 3666052311913695132}
   - component: {fileID: 3666052311913695134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy 3 - Blue Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -170,12 +170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 3666052311913695122}
-  moveSpeed: 0.8
-  damage: 7.5
+  moveSpeed: 0.5
+  damage: 30
   hitWaitTime: 1
-  health: 15
+  health: 30
   knockBackTime: 0.5
   expToGive: 3
+  CoinValue: 10
+  coinDropRate: 0.5
 --- !u!114 &3666052311913695134
 MonoBehaviour:
   m_ObjectHideFlags: 0

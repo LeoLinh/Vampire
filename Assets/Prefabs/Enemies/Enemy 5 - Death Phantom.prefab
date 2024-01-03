@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8477055139253015176}
   - component: {fileID: 8477055139253015179}
   - component: {fileID: 8477055139253015177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy 5 - Death Phantom
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -86,12 +86,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 8477055139253015173}
-  moveSpeed: 1.5
+  moveSpeed: 2.5
   damage: 15
   hitWaitTime: 1
-  health: 10
+  health: 50
   knockBackTime: 0.5
-  expToGive: 5
+  expToGive: 10
+  CoinValue: 40
+  coinDropRate: 0.5
 --- !u!114 &8477055139253015177
 MonoBehaviour:
   m_ObjectHideFlags: 0

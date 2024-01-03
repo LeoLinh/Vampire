@@ -20,6 +20,9 @@ public class EnemyController : MonoBehaviour
 
     public int expToGive = 1;
 
+    public int CoinValue = 1;
+    public float coinDropRate = .5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,26 +33,33 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(knockBackCounter > 0)
+        if (PlayerController.instance.gameObject.activeSelf == true)
         {
-            knockBackCounter -= Time.deltaTime;
-
-            if(moveSpeed > 0)
+            if (knockBackCounter > 0)
             {
-                moveSpeed = -moveSpeed * 2f;
+                knockBackCounter -= Time.deltaTime;
+
+                if (moveSpeed > 0)
+                {
+                    moveSpeed = -moveSpeed * 2f;
+                }
+
+                if (knockBackCounter <= 0)
+                {
+                    moveSpeed = Mathf.Abs(moveSpeed * .5f);
+                }
             }
 
-            if(knockBackCounter <= 0)
+            theRB.velocity = (target.position - transform.position).normalized * moveSpeed;
+
+            if (hitCounter > 0f)
             {
-                moveSpeed = Mathf.Abs(moveSpeed * .5f);
+                hitCounter -= Time.deltaTime;
             }
         }
-
-        theRB.velocity = (target.position - transform.position).normalized * moveSpeed;
-
-        if (hitCounter > 0f)
+        else
         {
-            hitCounter -= Time.deltaTime;
+            theRB.velocity = Vector2.zero;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -70,6 +80,11 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
 
             ExperienceLevelController.instance.SpawnExp(transform.position, expToGive);
+
+            if (Random.value <= coinDropRate)
+            {
+                CoinController.instance.DropCoin(transform.position, CoinValue);
+            }
         }
 
         DamageNumberController.instance.SpawnDamage(damageToTake, transform.position);

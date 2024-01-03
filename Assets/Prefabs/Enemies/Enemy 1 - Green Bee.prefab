@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3163056288122635994}
   - component: {fileID: 3163056288122635993}
   - component: {fileID: 3163056288122635995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy 1 - Green Bee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -170,12 +170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 3163056288122635991}
-  moveSpeed: 2
+  moveSpeed: 0.8
   damage: 5
   hitWaitTime: 1
   health: 5
   knockBackTime: 0.5
   expToGive: 1
+  CoinValue: 1
+  coinDropRate: 0.5
 --- !u!114 &3163056288122635995
 MonoBehaviour:
   m_ObjectHideFlags: 0
